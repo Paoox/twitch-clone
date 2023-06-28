@@ -35,9 +35,14 @@
 
 .users {
   display: flex;
+  flex-direction: column;
   gap: 5px;
   padding: 0px;
   margin-top: 15px;
+}
+
+.user-card {
+  display: flex;
 }
 
 .img-user {
@@ -48,7 +53,7 @@
 }
 
 .data-user {
-  margin: 0;
+  margin-right: 0;
   padding: 0;
 }
 
@@ -64,6 +69,7 @@
 .rankin {
   padding: 0;
   display: inline-flex;
+  align-items: center;
   padding-left: 12px;
   gap: 5px;
 }
@@ -74,4 +80,46 @@
 
 .count-rank {
   font-size: 10px;
+}
+
+.categorys {
+  display: flex;
+  flex-wrap: wrap;
+  line-height: 3px;
+  gap: 40px;
+}
+
+.category {
+  padding: auto;
+}
+
+.category-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.espects {
+  font-size: 13px;
+  color: rgb(154, 150, 144);
+}
+
+.category-tags {
+  display: flex;
+}
+
+.tag1,
+.tag2 {
+  margin-right: 15px;
+  background-color: rgba(95, 158, 160, 0.665);
+  height: 15px;
+  border: none;
+  border-radius: 15px;
+  font-size: 10px;
+}
+
+.category-new {
+  position: absolute;
+  border: none;
+  border-radius: 15px;
+  background: red;
 }

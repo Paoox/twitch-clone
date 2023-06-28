@@ -1,10 +1,15 @@
+import Streamer from "./components/Streamer";
+import Category from "./components/Category";
+import { categorys } from "./data/categorys";
+import { users } from "./data/users";
+
 export default function App() {
   return (
     <>
       <nav className="navBar">
         <img
           src="/src/assets/vecteezy_twitch-logo-png-twitch-icon-transparent-png_18930502_651 (1).png"
-          alt=""
+          alt="twitch"
         />
       </nav>
       <section className="main">
@@ -18,22 +23,18 @@ export default function App() {
             />
           </span>
           <div className="users">
-            <div className="user">
-              <img
-                src="https://static-cdn.jtvnw.net/jtv_user_pictures/d4885242-febf-4a11-a42a-a0ad52474ee2-profile_image-70x70.png"
-                alt="icon"
-                className="img-user"
-              />
-            </div>
-            <div className="data-user">
-              <span className="user-name">ElSpreen</span>
-              <br></br>
-              <span className="user-activity">Conversando</span>
-            </div>
-            <div className="rankin">
-              <p className="online-rank">🔴</p>
-              <p className="count-rank">92.3 K</p>
-            </div>
+            {users.map((user, index) => {
+              return (
+                <Streamer
+                  key={`user-card-${index}`}
+                  url={user.url}
+                  userName={user.userName}
+                  activity={user.activity}
+                  isActive={user.isActive}
+                  count={user.count}
+                />
+              );
+            })}
           </div>
         </aside>
         <section>
@@ -42,6 +43,21 @@ export default function App() {
             alt=""
             className="img-initial"
           />
+          <div className="categorys">
+            {categorys.map((category, index) => {
+              return (
+                <Category
+                  key={`category-card-${index}`}
+                  url={category.url}
+                  title={category.title}
+                  spects={category.spects}
+                  isActive={category.isActive}
+                  tag1={category.tag1}
+                  tag2={category.tag2}
+                />
+              );
+            })}
+          </div>
         </section>
       </section>
     </>
